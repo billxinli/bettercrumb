@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Bettercrumb",
+  "description": "Makes crumbs better!",
+  "version": "1.0",
+
+  "permissions": [
+    "https://almostscrum.com/"
+  ],
+  "browser_action": {
+    "default_icon": "icon.ico"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://almostscrum.com/*"],
+      "css": ["css/styles.css"],
+      "js": ["js/jquery-2.1.0.min.js", "js/app.js"]
+    }
+  ]
+}
