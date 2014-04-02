@@ -4,6 +4,10 @@ function Dashboard() {
   this.currently_working_on_title = $('.row-fluid .span5 h4');
 
   this.init = function () {
+    if ($('body.users-page').length == 0 || location.toString().indexOf('user/dashboard') == -1) {
+      return false;
+    }
+
     var activity_feed = this
       .activity_feed
       .find('.widget')
@@ -30,7 +34,7 @@ function Dashboard() {
       .append(activity_feed);
 
     $('ul.stories').empty();
-    
+
     var feed_div = $('.bettercrumb-activity-feed');
     $('.bettercrumb-activity-feed-toggle').click(function () {
       if (feed_div.hasClass('hide')) {
@@ -39,8 +43,8 @@ function Dashboard() {
         feed_div.addClass('hide');
       }
     });
-    
-    
+
+
   }
 }
 
