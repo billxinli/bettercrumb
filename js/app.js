@@ -29,6 +29,8 @@ function Dashboard() {
       .append(activity_feed_toggle_button)
       .append(activity_feed);
 
+    $('ul.stories').empty();
+    
     var feed_div = $('.bettercrumb-activity-feed');
     $('.bettercrumb-activity-feed-toggle').click(function () {
       if (feed_div.hasClass('hide')) {
@@ -37,6 +39,8 @@ function Dashboard() {
         feed_div.addClass('hide');
       }
     });
+    
+    
   }
 }
 
